@@ -12,7 +12,9 @@ import categoryRoute from './routes/categories.js';
 import tipRoute from './routes/tips.js';
 
 // CORS
-app.use(cors());
+app.use(cors({
+  origin: 'https://blog-client-bay.vercel.app/'
+}));
 
 dotenv.config();
 app.use(express.json({ limit: '50mb' }));
