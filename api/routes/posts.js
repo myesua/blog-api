@@ -109,7 +109,7 @@ router.get('/', async (req, res) => {
         },
       }).sort({ createdAt: -1 });
     } else if (search) {
-      // find documents based on our query and projection
+      // find documents based on query and projection
       const agg = [
         {
           $search: {
@@ -157,5 +157,4 @@ router.get('/', async (req, res) => {
   }
 });
 
-// module.exports = router;
 export default router;

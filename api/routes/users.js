@@ -5,11 +5,6 @@ import Post from '../models/Post.js';
 import Tip from '../models/Tip.js';
 import bcrypt from 'bcrypt';
 
-// const User = require('../models/User');
-// const Post = require('../models/Post');
-// const Tip = require('../models/Tip');
-// const bcrypt = require('bcrypt');
-
 //UPDATE
 router.put('/:id', async (req, res) => {
   if (req.body._id === req.params.id) {
@@ -83,8 +78,8 @@ router.put('/:id', async (req, res) => {
         { author: author },
         { $set: { author: updatedAuthor } },
       );
-      // const { password, ...data } = updatedUser._doc;
-      // res.status(200).json(data);
+      const { password, ...data } = updatedUser._doc;
+      res.status(200).json(data);
     } catch (err) {
       res.status(500).json(err);
     }
@@ -119,5 +114,4 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// module.exports = router;
 export default router;

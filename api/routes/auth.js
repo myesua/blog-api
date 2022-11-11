@@ -3,13 +3,7 @@ const router = express.Router();
 import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 
-// const router = require('express').Router();
-// const User = require('../models/User');
-// const bcrypt = require('bcrypt');
-
 import { check, validationResult } from 'express-validator';
-
-// const { check, validationResult } = require('express-validator');
 
 let validate = [
   // Check Email Address
@@ -88,5 +82,4 @@ router.post('/login', validate, async (req, res) => {
   }
 });
 
-// module.exports = router;
 export default router;

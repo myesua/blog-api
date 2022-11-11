@@ -2,9 +2,6 @@ import express from 'express';
 const router = express.Router();
 import Tip from '../models/Tip.js';
 
-// const router = require('express').Router();
-// const Tip = require('../models/Tip');
-
 //POST TIP
 router.post('/', async (req, res) => {
   const newTip = new Tip({
@@ -86,7 +83,6 @@ router.get('/tip/:slug', async (req, res) => {
       { $inc: { visits: 1 } },
       { new: true },
     );
-    // res.status(200).json(tip);
     res.status(200).json(postTip);
   } catch (err) {
     res.status(500).json(err);
@@ -116,5 +112,4 @@ router.get('/', async (req, res) => {
   }
 });
 
-// module.exports = router;
 export default router;
