@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-// const mongoose = require('mongoose');
 
 const TipSchema = new mongoose.Schema(
   {
